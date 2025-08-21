@@ -1,3 +1,6 @@
+/* Layer definitions */
+#define DEFAULT 0
+#define BLUETOOTH 1
 
 / {
     keymap {
@@ -9,17 +12,17 @@
                 &kp N5      &kp N6      &kp N7      &kp N8
                 &kp N9      &kp N0      &kp A       &kp B
                 &kp C       &kp D       &kp E       &kp F
-                &mo 1       &kp H       &kp I       &kp J
+                &mo(BLUETOOTH) &kp H   &kp I      &kp J
             >;
         };
 
         bluetooth_layer {
             bindings = <
-                &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2
-                &trans      &trans        &trans        &trans
-                &trans      &trans        &trans        &trans
-                &trans      &trans        &trans        &trans
-                &trans      &trans        &trans        &trans
+                &bt BT_CLR  &bt BT_SEL(0)  &bt BT_SEL(1)  &bt BT_SEL(2)
+                &trans      &trans          &trans          &trans
+                &trans      &trans          &trans          &trans
+                &trans      &trans          &trans          &trans
+                &trans      &trans          &trans          &trans
             >;
         };
     };
