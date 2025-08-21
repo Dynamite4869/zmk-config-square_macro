@@ -3,7 +3,6 @@
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,sensors = &sensors;
     };
 
     kscan0: kscan_0 {
@@ -25,18 +24,5 @@
             , <&gpio0 29 (GPIO_PULL_DOWN)>
             , <&gpio0 4 (GPIO_PULL_DOWN)>
             ;
-    };
-
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&encoder>;
-    };
-
-    encoder: encoder_0 {
-        compatible = "alps,ec11";
-        label = "ENCODER";
-        a-gpios = <&gpio1 11 (GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 12 (GPIO_PULL_UP)>;
-        steps = <2>;
     };
 };
